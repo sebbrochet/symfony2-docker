@@ -74,7 +74,7 @@ Inside the VM command-line run:
 
 `docker run -p 80:80 -v /vagrant/application/:/srv/application:rw sample/application:dev`
 
-Now you have running instance of your application under `http://symfony2-docker.playground`
+Now you have running instance of your application under `http://symfony2-docker-new.playground/app_dev.php`
 
 #### 2. /bin/bash 
 
