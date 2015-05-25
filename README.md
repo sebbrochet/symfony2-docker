@@ -6,20 +6,29 @@ Sample Symfony2 application on Docker (production and development environment).
 
 ## Installation
 
-- Ensure you have the following tools installed on our computer:
- - Vagrant (http://vagrantup.com)
- - VirtualBox (http://www.virtualbox.org)
+- Ensure you have the following tools installed on your computer:
+  - Vagrant (http://vagrantup.com)
+  - VirtualBox (http://www.virtualbox.org)
 - Install vagrant-hostupdater plugin `vagrant plugin install vagrant-hostsupdater`
+- Install vagrant-vbguest plugin `vagrant plugin install vagrant-vbguest`
 - Run `vagrant up`
 
 ## Building images
 
-Use `./build.sh` in project root to build all docker images or run each command yourself.
+- Run `vagrant ssh` to access SSH into running VM
+- Go to `/vagrant` directory
+- Run `./build.sh` to build all docker images or run each command yourself.
 
 ### What's inside ?
 
-All images are based on `ubuntu:12.10`
+All images are based on `ubuntu:14.10`
 
+- sample/apache
+  - sample/apache-php:prod
+    - sample/apache-php:dev
+	  - sample/application:dev
+	- sample/application:prod
+	
 #### sample/apache
 
 Clean apache2 docker image.
@@ -76,6 +85,8 @@ If you want develop your application inside docker instance, run command in the 
 Now you should be inside docker instance. 
 
 Next step is run apache: `service apache2 start`.
+
+Or use PHP built-in web server: `php app/console server:run 0.0.0.0:80`
 
 Application code is in `/srv/application/`.
 

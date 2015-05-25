@@ -3,16 +3,16 @@
 
 parameters = {
 	"ip"        => "33.33.33.33",
-	"project"   => "symfony2-docker",
+	"project"   => "symfony2-docker-new",
     "memory"    => 2048,
     "cpus"      => 1,
     "timezone"  => "Europe/Warsaw"
 }
 
 Vagrant.configure("2") do |config|
-  config.vm.box = "precise64"
+  config.vm.box = "ubuntu/trusty64"
   config.vm.provision "docker",
-    images: ["ubuntu"]
+  images: ["ubuntu"]
 
   config.vm.synced_folder ".", "/vagrant", :nfs => true
 

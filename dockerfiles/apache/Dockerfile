@@ -1,4 +1,4 @@
-FROM ubuntu:12.10
+FROM ubuntu:14.10
 
 ENV DEBIAN_FRONTEND noninteractive
 
