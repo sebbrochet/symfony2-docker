@@ -13,7 +13,7 @@ RUN apt-add-repository ppa:ondrej/php5 -y
 RUN apt-get update -y
 
 # install PHP
-RUN apt-get install -y --force-yes php5 libapache2-mod-php5 php5-mysql php5-json php5-xsl php5-intl php5-mcrypt php5-curl
+RUN apt-get install -y --force-yes php5 libapache2-mod-php5 php5-mysql php5-json php5-xsl php5-intl php5-mcrypt php5-curl php5-sqlite
 
 # install utils
 RUN apt-get install -y curl

@@ -8,7 +8,7 @@ RUN apt-get install -y php5-xdebug
 RUN php5enmod xdebug
 
 ADD xdebug.ini /xdebug.ini
-RUN sed -i "s@EXTENSION_DIR@`php -i | grep extension_dir | awk '{print $(NF)}'`@" /xdebug.ini
+RUN sed -i "s@EXTENSION_DIR@`php -i | grep '^extension_dir' | awk '{print $(NF)}'`@" /xdebug.ini
 RUN mv /xdebug.ini /etc/php5/mods-available/xdebug.ini
 
 # Install & Configure  webgrind
