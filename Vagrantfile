@@ -14,10 +14,7 @@ Vagrant.configure("2") do |config|
   config.vm.provision "docker",
   images: ["ubuntu"]
 
-  config.vm.synced_folder ".", "/vagrant",
-    owner: "vagrant",
-    group: "www-data",
-    mount_options: ["dmode=775,fmode=664"]
+  config.vm.synced_folder ".", "/vagrant"
   
   config.vm.network :private_network, ip: parameters['ip']
   config.vm.hostname = parameters['project'] + ".playground"
