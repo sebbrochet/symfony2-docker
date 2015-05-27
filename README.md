@@ -60,7 +60,9 @@ Image prepared to by run with mounted shared volume with application code to `/s
 
 ## Production
 
-TBD
+`docker run --rm -p 80:80 sample/application:prod`
+
+Now you have running instance of your application under `http://symfony2-docker-new.playground`
 
 ## Development environment
 
